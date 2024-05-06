@@ -1,9 +1,9 @@
 variable "secret_id" {
-  default = "AKIDujT7sdWLDY4mhaO5MZqEhBcxKXfhfWTS"
+  default = "id"
 }
 
 variable "secret_key" {
-  default = "32pOwStNmIgrtyysohXFoLtIajiXAjBc"
+  default = "key"
 }
 
 variable "region" {
