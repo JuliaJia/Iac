@@ -14,6 +14,7 @@ data "tencentcloud_availability_zones_by_product" "default" {
 data "tencentcloud_images" "default" {
   image_type = ["PUBLIC_IMAGE"]
   os_name    = "ubuntu"
+  # image_id   = "img-eb30mz89"
 }
 
 # Get availability instance types
@@ -23,7 +24,14 @@ data "tencentcloud_instance_types" "default" {
     name   = "instance-family"
     values = ["S5"]
   }
-
+  filter {
+    name   = "instance-charge-type"
+    values = ["POSTPAID_BY_HOUR"]
+  }
+  filter {
+    name   = "zone"
+    values = ["ap-hongkong-2"]
+  }
   cpu_core_count = 2
   memory_size    = 8
 }
